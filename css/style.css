@@ -3,3 +3,10 @@
 	border:2px solid;
 	border-radius:6px;
 }
+
+/*
+Menu Page CSS
+*/
+.jumbotron #title {
+	text-align: center
+}
