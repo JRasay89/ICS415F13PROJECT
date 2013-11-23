@@ -3,3 +3,7 @@
 	border:2px solid;
 	border-radius:6px;
 }
+
+#errors{
+	color:red;
+}
