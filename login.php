@@ -10,10 +10,7 @@
 	
 	$user = $_POST['username'];
 	$pass = $_POST['password'];
-	
-	
-	
-	
+
 	//prevent unwanted sql queries from user input
 	$query = 'SELECT username, password FROM users WHERE username = ?';
 	
@@ -39,7 +36,7 @@
 		}
 		else//0 or 2+ rows so not valid results
 		{
-			return false;
+			echo 'false';
 		}
 	}
 	
