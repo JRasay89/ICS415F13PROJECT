@@ -48,7 +48,6 @@
 				username CHAR(40) NOT NULL UNIQUE,
 				name CHAR(40) NOT NULL,
 				email CHAR(100),
-				age INT,
 				password CHAR(50) NOT NULL
 			)";
 
@@ -77,8 +76,8 @@
 	
 	function addGuest($con)
 	{
-		$query = "INSERT INTO users(username, name, email, age, password)
-				VALUES('guest', 'guest', 'guest@guest.com', 0, 1234)";
+		$query = "INSERT INTO users(username, name, email, password)
+				VALUES('guest', 'guest', 'guest@guest.com', 1234)";
 		mysqli_query($con, $query);
 	}
 
@@ -86,6 +85,5 @@
 	connectToDB($connection);
 	createTables($connection);
 	addGuest($connection);
-	addTopics($connection);
 	mysqli_close($connection);
 ?>
