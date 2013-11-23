@@ -19,7 +19,7 @@
 		}
 		else
 		{
-			#echo"<script>alert(\"failed to make db". mysqli_error($con) ."\")</script>";
+			//echo"<script>alert(\"failed to make db". mysqli_error($con) ."\")</script>";
 		}
 	}
 	
@@ -71,7 +71,7 @@
 		}
 		if(!mysqli_query($con,$userTable))
 		{
-			#echo "error: " . mysqli_error($con);
+			//echo "error: " . mysqli_error($con);
 		}
 	}
 	
@@ -80,14 +80,6 @@
 		$query = "INSERT INTO users(username, name, email, age, password)
 				VALUES('guest', 'guest', 'guest@guest.com', 0, 1234)";
 		mysqli_query($con, $query);
-	}
-
-
-	
-	//adds the current default topics to the empty topics table
-	function addTopics($con)
-	{
-
 	}
 
 	createDatabase($connection);
