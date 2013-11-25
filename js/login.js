@@ -51,9 +51,22 @@ function go()
 	var password = $("#password").val();
 	var remember = $("#remember").is(':checked');
 	
+	//had to use 1/0 instead of true/false because i think
+	//php wasn't reading them as boolean when they were
+	//passed in the post
+	if(remember)
+	{
+		login(username, password, 1);
+	
+	}
+	else
+	{
+		login(username, password, 0);
+	}
+	
 	console.log('remember?: ' + remember);
 	
-	login(username, password, remember);
+	
 }
 
 function guest()
@@ -61,5 +74,5 @@ function guest()
 	var username = 'guest';
 	var password = '1234';
 
-	login(username, password, false);
+	login(username, password, 0);
 }

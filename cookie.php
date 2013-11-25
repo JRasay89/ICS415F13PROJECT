@@ -7,16 +7,12 @@
 	
 	$cName = 'currentUser';
 	$cVal = $user;
-	$cTime = time() + (60*60*24*$days);
-	
-	//if they want to remember set it for $days
-	if($remember)
-	{
-		setcookie($cName, $cVal, $cTime, "/");
-	}
-	else//if not then default to expire when session ends
-	{
-		setcookie($cName, $cVal, 0, "/");
-	}
+	$cTime = (time() + (60*60*24*$days))*$remember;
+	//since remember is 1 (will be remembered)
+	//or 0 (wont be remembered) this multiplication will work
+	//for determining the cookie's time
+
+	setcookie($cName, $cVal, $cTime, "/");
+
 
 ?>
