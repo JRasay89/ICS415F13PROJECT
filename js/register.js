@@ -51,33 +51,41 @@ function validate()
 	}
 	else//they entered something
 	{
-		//check if username has valid characters
-		if(!user_regex.test(user))
+		//check for invalid usernames
+		if(user == 'false')
 		{
-			//invalid characters
 			$("#user_error").html("invalid username");
 		}
-		else//valid characters
+		else
 		{
-			$.ajax(
+			//check if username has valid characters
+			if(!user_regex.test(user))
 			{
-				type:'post',
-				cache:false,
-				async:false,
-				url:'available.php', 
-				data:{username:user}, 
-				success: function(output)
+				//invalid characters
+				$("#user_error").html("invalid username");
+			}
+			else//valid characters
+			{
+				$.ajax(
 				{
-					if(output === "true")
+					type:'post',
+					cache:false,
+					async:false,
+					url:'available.php', 
+					data:{username:user}, 
+					success: function(output)
 					{
-						valid_user = true;
+						if(output === "true")
+						{
+							valid_user = true;
+						}
+						else
+						{
+							$("#user_error").html("unavailable username");
+						}
 					}
-					else
-					{
-						$("#user_error").html("unavailable username");
-					}
-				}
-			});
+				});
+			}
 		}
 	}
 	
