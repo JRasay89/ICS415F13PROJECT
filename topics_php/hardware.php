@@ -14,6 +14,7 @@
 		<script src="../js/bootstrap.min.js"></script>
 		<!--Custom Javascript -->
 		<script src="../js/topics.js"></script>
+		<script src='../js/checkuser.js'></script>
 		
 	</head>
 	<body>
@@ -24,13 +25,13 @@
 						<a href="../menu.html">Home</a>
 					</li>
 					<li>
-						<a href="about.html">About</a>
+						<a href="../about.html">About</a>
 					</li>
 					<li>
-						<a href="#">Logout</a>
+						<a href="#" onClick="logout()" id="logout_link">Logout</a>
 					</li>
 				</ul>
-				<h3 class="text-muted">Welcome,Guess</h3>
+				<h3 class="text-muted" id="welcome_message"></h3>
 			</div>
 			<div class="jumbotron">
 				<h1 id="title">Hardware</h1>
@@ -50,5 +51,5 @@
 			<!--/footer-->
 		</div>
 		<!-- /container-->
-	</body
+	</body>
 </html>
