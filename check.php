@@ -4,7 +4,11 @@
 	if(isset($_COOKIE['currentUser']))
 	{
 		$user = $_COOKIE['currentUser'];
-		echo 'true';
+		echo $user;
+	}
+	else
+	{
+		echo 'false';
 	}
 
 ?>

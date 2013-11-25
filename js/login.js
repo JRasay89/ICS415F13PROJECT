@@ -2,7 +2,7 @@ function check()
 {
 	$.get('check.php', function(output)
 	{
-		if(output === 'true')
+		if(output !== 'false')
 		{
 			window.location.href = 'menu.html';
 		}
