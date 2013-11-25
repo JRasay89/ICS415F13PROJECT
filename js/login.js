@@ -15,20 +15,34 @@ function login(user, pass, remember)
 	
 	//output will return true or false
 	//true if valid user false if not
-	$.post('login.php', {username:user, password:pass} ,function(output)
+	$.ajax(
 	{
-		console.log('valid login: '+ output);
-		if(output === 'true')
+		type:'post',
+		cache:false,
+		async:false,
+		url:'login.php',
+		data: {username:user, password:pass},
+		success:function(output)
 		{
-			$.post('cookie.php', {username:user, longTerm:remember});
-			window.location.href = 'menu.html';
-		}
-		else
-		{
-			$("#errors").html("invalid username/password combination");
+			console.log('valid login: '+ output);
+			if(output === 'true')
+			{
+				$.ajax(
+				{
+					type:'post',
+					cache:false,
+					async:false,
+					url:'cookie.php',
+					data:{username:user, longTerm:remember}
+				});
+				window.location.href = 'menu.html';
+			}
+			else
+			{
+				$("#errors").html("invalid username/password combination");
+			}
 		}
 	});
-
 }
 
 function go()
