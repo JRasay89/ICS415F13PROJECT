@@ -7,6 +7,12 @@
 		<link rel="stylesheet" type="text/css" href="css/menu-style.css">
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+		
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://code.jquery.com/jquery.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="js/bootstrap.min.js"></script>
+		<script src='js/checkuser.js'></script>
 	</head>
 	<body>
 		<<div class="container">
@@ -19,23 +25,23 @@
 						<a href="about.html">About</a>
 					</li>
 					<li>
-						<a href="#">Logout</a>
+						<a href="#" onClick="logout()" id="logout_link">Logout</a>
 					</li>
 				</ul>
-				<h3 class="text-muted">Welcome,Guess</h3>
+				<h3 class="text-muted" id="welcome_message"></h3>
 			</div>
 			<div class="jumbotron">
-				<h1 id="title">THE FORUM</h1>
+				<h1 id="title">About Page</h1>
 			</div>
-			<h1>The About Page</h1>
+			<div class="row marketing">
+				<div class="col-md-4">
+					<h1>The About Page</h1>
+				</div>
+			</div>
 			<div class="footer">
 				<p>© ICS 415 </p>
 			</div>
 		</div>
 		<!-- /container-->
-		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-		<script src="https://code.jquery.com/jquery.js"></script>
-		<!-- Include all compiled plugins (below), or include individual files as needed -->
-		<script src="js/bootstrap.min.js"></script>
 	</body>
 </html>
