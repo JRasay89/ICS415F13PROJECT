@@ -274,7 +274,9 @@ function changeFormBtn() {
 	$("#back_btn").attr("href", href);
 	//Change the new topic button into post and its id to post_msg
 	$("#form_title").text("Post Message");
-	$("#btn_topic").text("Post");
+	var your_div = document.getElementById("btn_topic");
+	var text_to_change = your_div.childNodes[1];
+	text_to_change.nodeValue = ' Post';
 	$("#btn_topic").attr("id","post_msg");
 	$("#inputTitle_div").remove();
 	$("#btn_form_create").attr("id","post_btn");
